@@ -7,11 +7,13 @@ import { StockInterface, StocksService } from './services/stocks.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  stocks: Array<StockInterface>;     
+
+  stocks: Array<StockInterface>;   
+
   title = 'Stock';
+
   constructor( service: StocksService){
-    
-    service.load('[AAPL]').subscribe(stcoks=>{
+    service.load(['AAPL']).subscribe(stcoks => {
       this.stocks  = stcoks;
     });
   }

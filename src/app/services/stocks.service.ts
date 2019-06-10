@@ -32,9 +32,9 @@ export class StocksService {
     return this.get();
   }
 
-  load(symbols) {
-    if (symbols) {
-      return this.http.get<Array<StockInterface>>(service + '/stocks/snapshot?symbols='+symbols.join());
-    }
+  load(symbols: Array<String>) {
+    if (symbols) {     
+      return this.http.get<Array<StockInterface>>(service + '/stocks/snapshot?symbols=' + symbols.join());     
+    }     
   }
 }
